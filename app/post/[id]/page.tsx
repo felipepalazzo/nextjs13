@@ -1,10 +1,15 @@
-const getPerson = async () => {
-  const res = await fetch("https://swapi.dev/api/people/1/");
+// getServerSideProps
+const getPerson = async (id: string) => {
+  const res = await fetch(`https://swapi.dev/api/people/${id}/`);
   return res.json();
 };
 
-export default async function IndividualPost() {
-  const person = await getPerson();
+export default async function IndividualPost({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const person = await getPerson(params.id);
 
   return (
     <>
