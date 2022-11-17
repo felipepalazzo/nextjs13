@@ -1,7 +1,10 @@
+import {Roboto_Serif} from '@next/font/google'
 import Head from 'next/head'
 import Image from 'next/image'
 import '../styles/globals.css'
 import styles from '../styles/Home.module.css'
+
+const roboto = Roboto_Serif()
 
 export default function HomePage(){
     return (
@@ -13,7 +16,7 @@ export default function HomePage(){
           </Head>
     
           <main className={styles.main}>
-            <h1 className={styles.title}>
+            <h1 className={roboto.className}>
               Welcome to <a href="https://nextjs.org">Next.js!</a>
             </h1>
     
