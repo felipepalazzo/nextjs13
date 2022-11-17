@@ -1,3 +1,3 @@
-export default function Button() {
-  return <button>click me</button>;
+export default function Button({ onClick }: { onClick: () => void }) {
+  return <button onClick={onClick}>click me</button>;
 }
